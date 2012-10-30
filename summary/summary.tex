@@ -3,7 +3,8 @@
 \usepackage{latexsym}
 \usepackage{amssymb}
 \usepackage{amsmath}
-\usepackage{pstricks}
+% \usepackage{pstricks}
+%\usepackage[dvips]{pstricks}
 %\usepackage{proof}
 
 \date{}
@@ -404,6 +405,68 @@ programming features.
 \section{Summary of ``How to Make FDR Spin --- LTL Model Checking of CSP by
 Refinement''\cite{Leuschel2001How}}
   \label{section:FDRSPIN}
+
+In ``classical'' model checking, systems to be checked are encoded in the
+specification language used by the model checker. Extracted from these
+specifications, models of the systems are then checked against the expected
+correctness properties, which are encoded in certain formal language, by the
+model checker. Among all those formal languages, Linear-time Temporal Logic 
+(LTL) allows the specification of temporal properties encountered in practice
+ in a natural and succinct manner, which makes LTL model checking a common
+approach for the verification of hardware and software system.
+
+The concept of refinement relation in Communicating Sequential Process (CSP)
+offers a new approach for model checking. In such method, system to be checked is
+specified as a process (implementation process) in CSP, while the correctness 
+properties are also specified as a process (specification process) in CSP. The
+verification of correctness properties of the system is then turned into the
+question about whether the implementation process or process derived from it is a
+refinement of the
+specification process, which can be decided by the refinement checker (e.g.
+FDR). This refinement-based approach suits itself very nicely to the stepwise
+development of systems. However there is no general way to
+generate the specification process and the appropriate derivation of the
+implementation process for any correctness properties, which makes such approach
+less usable in practice. To tackle this, the paper presents a new approach which is also based
+on refinement checking but can check the implementation process against the
+correctness properties specified in LTL directly and mechanically. 
+
+In ``classical'' LTL model checking, that a system satisfies an LTL formula fi
+means that all of its computations satisfy fi and a computation is defined as an
+infinite sequence
+of states, the transitions of which are possbile in the system. Similar concept is applied to
+CSP process in this paper. That a process satisfies an LTL formula fi means that
+all of its traces satisfy fi. And a trace is an infinite\footnote todo sequence of events that
+the process can possibly communicate with. Given an infinite trace ...
+
+that a computation satisfies an LTL formula
+means 
+
+
+correctness properties
+are encoded as processes as well, which we call specification processes,specified in the same language as the systems to be checked. 
+
+correctness properties are usually encoded in
+certain formal languages. Such properties are then checked against
+CSP offers a unique way of verification of correctness properties of finite
+
+This paper studies the possiblility of doing LTL model checking on CSP
+specification in the context of refinement.
+
+Def. Trace V.S. LTL
+
+Problem with refinement checking
+
+paper's method
+
+refinement and LTL properties.
+
+complexity and shortcoming
+
+other works.
+
+
+
 
 \newpage
 
